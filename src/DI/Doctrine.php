@@ -11,7 +11,7 @@ use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 
 final class Doctrine implements ServiceProvider
 {
-    public function provide (Container $c)
+    public function provide (Container $c):void
     {
         $c->set(EntityManager::class, function (Container $c): EntityManager{
 

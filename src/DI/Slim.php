@@ -3,6 +3,7 @@
 namespace Eroto\HomeHandler\DI;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
+use Slim\App;
 use Slim\Factory\AppFactory;
 
 
@@ -17,14 +18,13 @@ final class Slim implements ServiceProvider{
             // Create Twig
             return Twig::create($settings['twig']['templatePath'], ['cache' => $settings['twig']['cache']]);
 
-            /**
-         * Instantiate App
-         *
-         * In order for the factory to work you need to ensure you have installed
-         * a supported PSR-7 implementation of your choice e.g.: Slim PSR-7 and a supported
-         * ServerRequest creator (included with Slim PSR-7)
-         */
-            $app = AppFactory::create();
+        });
+
+        $container->set(App::class, static function (ContainerInterface $container) use ($settings): App {
+            
+            $app = AppFactory::create(null, $container);
+
+        
 
             /**
              * The routing middleware should be added earlier than the ErrorMiddleware
@@ -43,7 +43,11 @@ final class Slim implements ServiceProvider{
              * Note: This middleware should be added last. It will not handle any exceptions/errors
              * for middleware added after it.
              */
-            $errorMiddleware = $app->addErrorMiddleware($settings['slim']['displayErrorDetails'], $settings['slim']['logErrors'], $settings['slim']['logErrorDetails']);
+            $errorMiddleware = $app->addErrorMiddleware(
+                $settings['slim']['displayErrorDetails'],
+                $settings['slim']['logErrors'],
+                $settings['slim']['logErrorDetails']
+            );
 
             //Define routes
             $app->get('/', function (Request $request, Response $response, $args) {
