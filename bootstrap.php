@@ -1,6 +1,6 @@
 <?php
 
-use Eroto\HomeHandler\Container;
+use Eroto\HomeHandler\DI\Container;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
