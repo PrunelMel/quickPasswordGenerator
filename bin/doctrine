@@ -5,6 +5,9 @@
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
 use Doctrine\ORM\Tools\Console\EntityManagerProvider\SingleManagerProvider;
 use Eroto\HomeHandler\DI\Doctrine;
+use Eroto\HomeHandler\DI\Container;
+use Doctrine\ORM\EntityManager;
+
 // Adjust this path to your actual bootstrap.php
 $container = require_once __DIR__ . '/../bootstrap.php';
 

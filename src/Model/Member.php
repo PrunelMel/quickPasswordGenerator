@@ -7,8 +7,11 @@ use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\GeneratedValue;
 use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\Table;
+use Doctrine\ORM\Mapping as ORM;
 
-#[Entity, Table(name: 'Member')]
+#[ORM\Entity]
+#[ORM\Table(name: 'Member')]
+#[UniqueConstraint(name: "unique_name", columns: ["name"])]
 final class Member{
     
     #[Id, Column(type: 'integer'), GeneratedValue(strategy: 'AUTO')]

@@ -21,7 +21,7 @@ return [
 
             'cache_dir' => APP_ROOT . '/var/doctrine',
 
-            'metadata_dirs' => [APP_ROOT . '/src/Domain'],
+            'metadata_dirs' => [APP_ROOT . '/src/Model'],
 
         
             'connection' => [

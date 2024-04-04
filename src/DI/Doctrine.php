@@ -20,12 +20,15 @@ final class Doctrine implements ServiceProvider
             $config = ORMSetup::createAttributeMetadataConfiguration(
                 $settings['doctrine']['metadata_dirs'],
                 $settings['doctrine']['dev_mode'],
+                null,
+                $settings['doctrine']['dev_mode'] ?
+                    new ArrayAdapter() :
+                    new FilesystemAdapter(directory: $settings['doctrine']['cache_dir'])
             );
 
-            $connection = DriverManager::getConnection([
+            $connection = DriverManager::getConnection(
                 $settings['doctrine']['connection'],
-                $settings['doctrine']['path'],
-            ], $config);
+                $config);
 
             return $entityManager = new EntityManager($connection, $config);
         }); 

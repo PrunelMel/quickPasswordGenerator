@@ -5,6 +5,9 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
 use Slim\Factory\AppFactory;
+use Slim\Views\Twig;
+use Slim\Views\TwigMiddleware;
+use Slim\Middleware\ContentLengthMiddleware;
 
 
 
@@ -35,7 +38,8 @@ final class Slim implements ServiceProvider{
             /**
              * Add Error Middleware
              *
-             * @param bool                  $displayErrorDetails -> Should be set to false in production
+             * @param bool                  $displayErrorDetails -> Should be set to false in productionuse Slim\Views\Twig;
+
              * @param bool                  $logErrors -> Parameter is passed to the default ErrorHandler
              * @param bool                  $logErrorDetails -> Display error details in error log
              * @param LoggerInterface|null  $logger -> Optional PSR-3 Logger  
@@ -48,6 +52,12 @@ final class Slim implements ServiceProvider{
                 $settings['slim']['logErrors'],
                 $settings['slim']['logErrorDetails']
             );
+
+            // Add Twig-View Middleware
+            $app->add(TwigMiddleware::createFromContainer($app));
+
+            $app->add(new ContentLengthMiddleware());
+
 
             //Define routes
             $app->get('/', function (Request $request, Response $response, $args) {
