@@ -28,7 +28,14 @@ return [
                 'driver' => 'pdo_sqlite',
                 'path' => APP_ROOT . '/var/database.sqlite'
             ]
-        ]
+        ],
+        'twig' => [
+            // Twig template path
+            'templatePath' => APP_ROOT . '/templates',
+            // Twig cache, false or cache path
+            'cache' => false,
+        ],
+        
     ]
 ];
 
