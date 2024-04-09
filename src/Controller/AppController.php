@@ -7,7 +7,8 @@
     use Psr\Http\Message\ResponseInterface;
     use Slim\Exception\HttpNotFoundException;
     use Psr\Http\Message\ServerRequestInterface;
-    use Eroto\HomeHandler\Model;
+    use Eroto\HomeHandler\Model\Member;
+    use Doctrine\DBAL\Connection;
     
     
     class AppController{
@@ -35,23 +36,36 @@
         {
             //Create member
             $renderer = new PhpRenderer(APP_ROOT . '/templates');
-            return $renderer->render($response, 'form.html', ['type'=>'Member']);
+            return $renderer->render($response, 'form.php', ['type'=>'Member']);
         }
 
         public function home(ServerRequestInterface $request, ResponseInterface $response, array $args):ResponseInterface
         {
             $renderer = new PhpRenderer(APP_ROOT . '/templates');
-            return $renderer->render($response, 'home.html', ['type'=>'Member']);
+            return $renderer->render($response, 'home.php', ['type'=>'Member']);
 
         }
 
         public function create_member(ServerRequestInterface $request,ResponseInterface $response, array $args)
         {
-            $EntityManager = $this->container->get(EntityManager::class);
-            $renderer = new PhpRenderer(APP_ROOT . '/templates');
-            $parsedData = $request->getParsedBody();
-            $name = $parsedData['name'];
+            try{
+                $EntityManager = $this->container->get(EntityManager::class);
+                $renderer = new PhpRenderer(APP_ROOT . '/templates');
+                $parsedData = $request->getParsedBody();
+                $name = $parsedData['email'];
+                $member = new Member;
+                $member->setName($name);
+                $EntityManager->persist($member);
+                $EntityManager->flush();
+                /*var_dump($member);
+                exit;*/
+            }
+            catch(\Exception $e){
+                $hasError = true;
+                $messages = ['message' => 'Please retry. ' . $e->getMessage()];
+            }
 
+            return $renderer->render($response, "home.php");
         }
         
 

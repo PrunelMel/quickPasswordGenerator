@@ -20,10 +20,10 @@ final class Member{
     #[Column(type: 'string', unique: true, nullable: false)]
     private string $name;
 
-    public function __construct(string  $name){
+    /*public function __construct(){
 
         $this->name = $name;
-    }
+    }*/
 
     public function getId ():int{
         
@@ -33,6 +33,13 @@ final class Member{
     public function getName():string{
         
         return $this->name;
+    }
+
+    public function setName(string $name):static
+    {
+        $this->$name = $name;
+
+        return $this;
     }
 }
 

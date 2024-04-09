@@ -77,7 +77,7 @@ final class Slim implements ServiceProvider{
                 //show task by identified $args['id']
             });
         
-            $app->post('/members', [AppController::class,'home']);
+            $app->post('/members', [AppController::class,'create_member']);
         
             $app->post('/tasks', function (Request $request, Response $response, $args) {
                 //create a new task
