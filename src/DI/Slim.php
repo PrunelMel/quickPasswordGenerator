@@ -63,8 +63,10 @@ final class Slim implements ServiceProvider{
             //Define routes
             $app->get('/', [AppController::class,'home'])->setName('home');
         
-            $app->get('/members',[AppController::class,'create_member_temp'])->setName('AddMember');
-        
+            $app->get('/members',[AppController::class,'create_member_temp']);
+            
+            $app->post('/members', [AppController::class,'create_member'])->setName('AddMember');
+
             $app->get('/member/{id}', function (Request $request, Response $response, $args) {
                 //show member by identified $args['id']
             });
@@ -76,9 +78,7 @@ final class Slim implements ServiceProvider{
             $app->get('/tasks/{id}', function (Request $request, Response $response, $args) {
                 //show task by identified $args['id']
             });
-        
-            $app->post('/members', [AppController::class,'create_member']);
-        
+                
             $app->post('/tasks', function (Request $request, Response $response, $args) {
                 //create a new task
             });

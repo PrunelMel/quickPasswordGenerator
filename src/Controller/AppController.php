@@ -65,7 +65,7 @@
                 $messages = ['message' => 'Please retry. ' . $e->getMessage()];
             }
 
-            return $renderer->render($response, "home.php");
+            return $renderer->render($response, "home.php", ['message'=> 'Member added']);
         }
         
 

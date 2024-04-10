@@ -8,7 +8,7 @@
         <title>Home page</title>
     </head>
     <body class="bg-stone-900">
-        
+        <?php$messages['message']?>
         <a href="/members" class="block m-auto tracking-widest text-center w-1/12 h-3/5 rounded hover:bg-orange-600 text-white ">Create</a>
         <footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
             <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">

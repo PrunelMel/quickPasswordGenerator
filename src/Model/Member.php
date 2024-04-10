@@ -37,7 +37,7 @@ final class Member{
 
     public function setName(string $name):static
     {
-        $this->$name = $name;
+        $this->name = $name;
 
         return $this;
     }
