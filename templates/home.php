@@ -7,18 +7,18 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <title>Home page</title>
     </head>
-    <body class="bg-stone-900">
+    <body class="bg-stone-900 h-screen">
         <?php $message?>
         <header>
-            <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+            <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 text-blue-600">
                 <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <a href="https://flowbite.com" class="flex items-center">
-                        <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
-                        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                        <img src="/assets/clock-eleven-thirty-svgrepo-com.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+                        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">HM</span>
                     </a>
                     <div class="flex items-center lg:order-2">
-                        <a href="#" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Log in</a>
-                        <a href="#" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">Get started</a>
+                        <a href="#" class="text-blue-600  hover:bg-blue-600 hover:text-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2  focus:outline-none ">Log in</a>
+                        <a href="#" class="text-blue-600 hover:bg-blue-600 hover:text-white focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2   focus:outline-none focus:ring-primary-800">Get started</a>
                         <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
                             <span class="sr-only">Open main menu</span>
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
@@ -28,22 +28,22 @@
                     <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                         <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                             <li>
-                                <a href="#" class="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white" aria-current="page">Home</a>
+                                <a href="#" class="block py-2 pr-4 pl-3 text-blue-600 rounded  lg:p-0 hover:text-blue-900" aria-current="page">Home</a>
                             </li>
                             <li>
-                                <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Company</a>
+                                <a href="#" class="block py-2 pr-4 pl-3 hover:text-blue-900 text-blue-600 border-b border-gray-100   lg:border-0  lg:p-0 ">Company</a>
                             </li>
                             <li>
-                                <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Marketplace</a>
+                                <a href="#" class="block py-2 pr-4 pl-3 text-blue-600 hover:text-blue-900 border-b border-gray-100  lg:border-0  lg:p-0  lg:dark:hover:bg-transparent">Marketplace</a>
                             </li>
                             <li>
-                                <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Features</a>
+                                <a href="#" class="block py-2 pr-4 pl-3  border-b text-blue-600 hover:text-blue-900 lg:border-0 lg:p-0">Features</a>
                             </li>
                             <li>
-                                <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Team</a>
+                                <a href="#" class="block py-2 pr-4 pl-3 text-blue-600 hover:text-blue-900 border-b border-gray-100 lg:border-0 lg:p-0">Team</a>
                             </li>
                             <li>
-                                <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                                <a href="#" class="block py-2 pr-4 pl-3 text-blue-600 hover:text-blue-900 border-b border-gray-100 lg:border-0 lg:p-0">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -51,18 +51,20 @@
             </nav>
         </header>
 
-        <div class="container flex flex-row">
-            <div class="text-container text-white" >
-                Welcome!  <br>
+        <div class="container flex flex-row content-center gap-x-4 w-full h-full bg-blue-700">
+            <div class="text-container text-white w-1/2 grid grid-cols-1 content-center" >
+               <p class="text-center text-lg w-full">
+                 <span class="tracking-widest text-5xl font-bold">Welcome!</span>  <br>
 
-                Don't waste your time with house works anymore, HM will do it for you. Save your time, our priority.
+                    Don't waste your time planning house works anymore. <br><span>HM</span> will do it for you. <br>Save your time, our priority.
+                </p>
             </div>
-            <div class="img-container">
-                <img class="blur w-2/3 h-1/3" src="/assets/photo_2024-04-12_21-27-03.jpg" alt="">
+            <div class="img-container bg-white w-1/2">
+                <img class="" src="" alt="">
             </div>
         </div>
         
-        <a href="/members" class="block m-auto tracking-widest text-center w-1/12 h-3/5 rounded hover:bg-orange-600 text-white ">Create</a>
+        <a href="/members" class="block m-auto tracking-widest text-center w-7 h-7 rounded hover:bg-orange-600 text-white ">Create</a>
         <footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
             <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
             <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">HomeHandler</a>. All Rights Reserved.
