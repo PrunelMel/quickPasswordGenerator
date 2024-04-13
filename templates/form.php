@@ -6,13 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <script defer src="/assets/js/main.js"></script>
         <title>Create a new member</title>
     </head>
     <body class="h-full h-screen">
         <div class="container w-full grid grid-cols-3 h-2/3 m-auto">
-            <div>
-                <img src="/assets/standing-5.svg" alt="">
+            <div class="hidde">
+                <img  src="/assets/standing-5.svg" alt="">
             </div>
             <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
                 <div class="sm:mx-auto sm:w-full sm:max-w-sm">
