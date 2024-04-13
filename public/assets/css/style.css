@@ -6,8 +6,19 @@
     animation:toogle 1s linear ease-in;
 }
 
+.hiddeImg{
+    opacity: 0;
+    filter: blur(100px);
+    transform: translatex(100%);
+    transition:all 1s;
+    animation:toogle 1s linear ease-in;
+}
+
+
+
 .show{
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
+    transform: translateY(0);
 }

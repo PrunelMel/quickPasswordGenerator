@@ -59,7 +59,7 @@
                     Don't waste your time planning house works anymore. <br><span>HM</span> will do it for you. <br>Save your time, our priority.
                 </p>
             </div>
-            <div class="img-container grid grid-cols-1 content-center  w-1/2">
+            <div class="hiddeImg img-container grid grid-cols-1 content-center  w-1/2">
                 <img class="" src="/assets/Humaaans - 2 .png" alt="">
                 <!-- <img src="/assets/standing-5.svg" alt=""> -->
             </div>
