@@ -23,13 +23,17 @@
         public function get_member (ServerRequestInterface $request, ResponseInterface $response, array $args):ResponseInterface
         {
             $EntityManager = $this->container->get(EntityManager::class);
-            $member = $EntityManager->find('Member', $args['id']);
+            $member = $EntityManager->find(Member::class, $args['id']);
 
-            if ($member === null){
-                return 'Not found';
+            $renderer = new PhpRenderer(APP_ROOT . '/templates');
+
+            if (!empty($member)){
+                $members = array('member'=>$member);
+            }else{
+                throw new HttpNotFoundException($request);
             }
 
-            return $member;
+            return $renderer->render($response,'home.php',['members'=>$members]);
         }
 
         public function create_member_temp(ServerRequestInterface $request,ResponseInterface $response, array $args): ResponseInterface
