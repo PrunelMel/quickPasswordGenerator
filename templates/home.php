@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/assets/css/style.css">
         <script src="https://cdn.tailwindcss.com"></script>
+        <script defer src="/assets/js/main.js"></script>
         <title>Home page</title>
     </head>
     <body class="bg-blue-700 h-screen">
@@ -52,7 +53,7 @@
 
         <div class="container flex flex-row content-center gap-x-4 w-full h-full bg-blue-700">
             <div class="text-container text-white w-1/2 grid grid-cols-1 content-center" >
-               <p class=" text-center text-lg w-full">
+               <p class="hidde text-center text-lg w-full">
                  <span class="tracking-widest text-5xl font-bold">Welcome!</span>  <br>
 
                     Don't waste your time planning house works anymore. <br><span>HM</span> will do it for you. <br>Save your time, our priority.
