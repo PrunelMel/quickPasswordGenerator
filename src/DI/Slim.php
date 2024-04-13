@@ -68,6 +68,9 @@ final class Slim implements ServiceProvider{
             $app->post('/members', [AppController::class,'create_member'])->setName('AddMember');
 
             $app->get('/member/{id}',[AppController::class,'get_member'] );
+
+            $app->get('/board/{id}',[AppController::class,'workspace_temp'] );
+
         
             $app->get('/tasks', function (Request $request, Response $response, $args) {
                 //show all tasks

@@ -43,6 +43,11 @@
             return $renderer->render($response, 'form.php', ['type'=>'Member']);
         }
 
+        public function workspace_temp(ServerRequestInterface $request,ResponseInterface $response, array $args){
+            $renderer = new PhpRenderer(APP_ROOT . '/templates');
+            return $renderer->render($response, 'workspace.php');
+        }
+
         public function home(ServerRequestInterface $request, ResponseInterface $response, array $args):ResponseInterface
         {
             $renderer = new PhpRenderer(APP_ROOT . '/templates');
