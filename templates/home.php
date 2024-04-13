@@ -5,10 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/assets/css/style.css">
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="/assets/js/main.js"></script>
         <title>Home page</title>
     </head>
-    <body class="bg-stone-900 h-screen">
+    <body class="bg-blue-700 h-screen">
         <?php $message?>
         <header>
             <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 text-blue-600">
@@ -54,7 +53,7 @@
 
         <div class="container flex flex-row content-center gap-x-4 w-full h-full bg-blue-700">
             <div class="text-container text-white w-1/2 grid grid-cols-1 content-center" >
-               <p class="text-center text-lg w-full">
+               <p class=" text-center text-lg w-full">
                  <span class="tracking-widest text-5xl font-bold">Welcome!</span>  <br>
 
                     Don't waste your time planning house works anymore. <br><span>HM</span> will do it for you. <br>Save your time, our priority.
@@ -66,22 +65,22 @@
         </div>
         
         <!-- <a href="/members" class="block m-auto tracking-widest text-center w-7 h-7 rounded hover:bg-orange-600 text-white ">Create</a> -->
-        <footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
+        <footer class="bg-white  shadow m-4 ">
             <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">HomeHandler</a>. All Rights Reserved.
+            <span class="text-sm text-blue-700 font-bold font-mono sm:text-center ">© 2023 <a href="https://flowbite.com/" class="hover:underline">HomeHandler</a>. All Rights Reserved.
             </span>
             <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">About</a>
+                    <a href="#" class="hover:underline text-blue-700 me-4 md:me-6">About</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+                    <a href="#" class="hover:underline text-blue-700 me-4 md:me-6">Privacy Policy</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+                    <a href="#" class="hover:underline text-blue-700 me-4 md:me-6">Licensing</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline">Contact</a>
+                    <a href="#" class="hover:underline text-blue-700 font-mono ">Contact</a>
                 </li>
             </ul>
             </div>
