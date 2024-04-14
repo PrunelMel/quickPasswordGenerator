@@ -11,15 +11,16 @@
         <title>Create a new member</title>
     </head>
     <body class="h-full h-screen">
-        <div class="container w-full grid grid-cols-3 h-2/3 m-auto">
-            <div class="hidde">
-                <img  src="/assets/standing-5.svg" alt="">
+        <div class="container w-full grid grid-cols-3 content-end h-2/3 m-auto">
+            <div class="hidde">  
+                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+
+                <dotlottie-player src="https://lottie.host/8cd00f6e-0a3e-4411-bd63-efac37cc8b29/XrZv3de4vX.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
             </div>
+            
             <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
                 <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-                    <!-- <svg width="50px" height="px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 17V12L10.5 9.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg> -->
+                    
                     <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-blue-700">Add a new member</h2>
                 </div>
 
