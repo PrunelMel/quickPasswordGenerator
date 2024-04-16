@@ -51,6 +51,8 @@
             </nav>
         </header>
 
+        <?=$type?>
+
         <div class="container flex flex-row content-center gap-x-4 w-full h-full bg-blue-700">
             <div class="text-container text-white w-1/2 grid grid-cols-1 content-center" >
                <p class="hidde text-center text-lg w-full">

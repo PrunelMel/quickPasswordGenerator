@@ -76,6 +76,15 @@
 
             return $renderer->render($response, "home.php", ['message'=> 'Member added']);
         }
+
+        public function createTask(ServerRequestInterface $request,ResponseInterface $response, array $args){
+
+        }
+
+        public function createTaskTemp(ServerRequestInterface $request,ResponseInterface $response, array $args){
+            $renderer = new PhpRenderer(APP_ROOT . '/templates');
+            return $renderer->render($response, 'form.php', ['type'=>'Member']);
+        }
         
 
 
