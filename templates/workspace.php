@@ -6,15 +6,15 @@
         <link rel="stylesheet" href="/assets/css/style.css">
         <script src="https://cdn.tailwindcss.com"></script>
         <script defer src="/assets/js/main.js"></script>
-        <title>Home page</title>
+        <title>Workspace</title>
     </head>
-    <body class="bg-blue-700 h-screen">
+    <body class="w-full bg-blue-700 h-screen">
         <header>
             <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 text-blue-600">
                 <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <a href="" class="flex items-center">
                         <img src="/assets/flash-sale-ecommerce-2-svgrepo-com.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
-                        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">HM</span>
+                        <span class="self-center text-xl font-semibold whitespace-nowrap">HM</span>
                     </a>
                     <div class="flex items-center lg:order-2">
                         <a href="#" class="text-blue-600  hover:bg-blue-600 hover:text-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2  focus:outline-none ">Log in</a>
@@ -28,22 +28,15 @@
                     <div class="justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                         <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                             <li>
-                                <a href="#" class="block py-2 pr-4 pl-3 text-blue-600 rounded  lg:p-0 hover:text-blue-900" aria-current="page">Home</a>
+                                <a href="/" class="block py-2 pr-4 pl-3 text-blue-700 rounded  lg:p-0 hover:text-blue-900" aria-current="page">Home</a>
                             </li>
+
                             <li>
-                                <a href="#" class="block py-2 pr-4 pl-3 hover:text-blue-900 text-blue-600 border-b border-gray-100   lg:border-0  lg:p-0 ">Workspace</a>
+                                <a href="#" class="block py-2 pr-4 pl-3 text-blue-700 hover:text-blue-900 border-b border-gray-100 lg:border-0 lg:p-0">Team</a>
                             </li>
+
                             <li>
-                                <a href="#" class="block py-2 pr-4 pl-3 text-blue-600 hover:text-blue-900 border-b border-gray-100  lg:border-0  lg:p-0  lg:dark:hover:bg-transparent">Marketplace</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block py-2 pr-4 pl-3  border-b text-blue-600 hover:text-blue-900 lg:border-0 lg:p-0">Features</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block py-2 pr-4 pl-3 text-blue-600 hover:text-blue-900 border-b border-gray-100 lg:border-0 lg:p-0">Team</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block py-2 pr-4 pl-3 text-blue-600 hover:text-blue-900 border-b border-gray-100 lg:border-0 lg:p-0">Contact</a>
+                                <a href="#" class="block py-2 pr-4 pl-3 text-blue-700 hover:text-blue-900 border-b border-gray-100 lg:border-0 lg:p-0">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -51,13 +44,17 @@
             </nav>
         </header>
 
-        <?=$type?>
+        <div>
+            
+            <?php foreach($member as $m):?>
+                <span class="font-bold"><?= $m->getName() ?></span><br>
+            <?php endforeach;?>
 
-       
+        </div>
+        <a href="/workspace/plan" class="block w-32 h-12 text-center m-auto text-blue-700 bg-white hover:scale-105 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  focus:outline-none dark:focus:ring-blue-800">generate</a>
+        <!-- <a href="/members" class="block m-auto tracking-widest text-center w-7 h-7 rounded  hover:bg-orange-600 text-white ">Create</a> -->
         
-        <!-- <a href="/members" class="block m-auto tracking-widest text-center w-7 h-7 rounded hover:bg-orange-600 text-white ">Create</a> -->
-        
-        <footer class="bg-white text-blue-700">
+        <footer class="bg-white text-blue-700 ">
             <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-0">
@@ -131,7 +128,7 @@
                         </svg>
                         <span class="sr-only">GitHub account</span>
                     </a>
-                    <a href="#" class="text-blue-700 hover:text-blue-900  ms-5">
+                    <a href="#" class="text-blue-700 white:text-blue-900  ms-5">
                         <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z" clip-rule="evenodd"/>
                         </svg>

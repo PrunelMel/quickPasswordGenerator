@@ -8,6 +8,8 @@
     use Slim\Exception\HttpNotFoundException;
     use Psr\Http\Message\ServerRequestInterface;
     use Eroto\HomeHandler\Model\Member;
+    use Eroto\HomeHandler\Model\Task;
+
     use Doctrine\DBAL\Connection;
     
     
@@ -86,6 +88,23 @@
             return $renderer->render($response, 'form.php', ['type'=>'Member']);
         }
         
+        public function generatePlan(ServerRequestInterface $request,ResponseInterface $response, array $args){
+            try{
+                $entityManager = $this->container->get(EntityManager::class);
+                $renderer = new PhpRenderer(APP_ROOT . '/templates');
+                $memberRepository = $entityManager->getRepository(Member::class);
+                $taskRepository = $entityManager->getRepository(Task::class);
+                $member = $memberRepository->findAll();
+                $task = $taskRepository->findAll();
+
+            }
+            catch(\Exception $e){
+                return $renderer->render($response, 'error.php', ['message' => 'Please retry. ' . $e->getMessage()]);
+
+            }
+            return $renderer->render($response, 'workspace.php', ['member'=>$member, 'task'=>$task]);
+
+        }
 
 
     }
