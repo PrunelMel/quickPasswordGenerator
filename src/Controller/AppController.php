@@ -93,7 +93,7 @@
                 $entityManager = $this->container->get(EntityManager::class);
                 $renderer = new PhpRenderer(APP_ROOT . '/templates');
                 $memberRepository = $entityManager->getRepository(Member::class);
-                $taskRepository = $entityManager->getRepository(Task::class);
+                $taskRepository = $entityManager->getRepository('');
                 $member = $memberRepository->findAll();
                 $task = $taskRepository->findAll();
 

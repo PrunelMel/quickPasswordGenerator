@@ -51,7 +51,7 @@
             <?php endforeach;?>
 
         </div>
-        <a href="/workspace/plan" class="block w-32 h-12 text-center m-auto text-blue-700 bg-white hover:scale-105 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  focus:outline-none dark:focus:ring-blue-800">generate</a>
+        <a href="/workspace/plan" class="block transition-all w-32 h-12 text-center m-auto text-blue-700 bg-white hover:scale-105 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  focus:outline-none dark:focus:ring-blue-800">generate</a>
         <!-- <a href="/members" class="block m-auto tracking-widest text-center w-7 h-7 rounded  hover:bg-orange-600 text-white ">Create</a> -->
         
         <footer class="bg-white text-blue-700 ">
