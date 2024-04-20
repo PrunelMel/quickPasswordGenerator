@@ -9,6 +9,7 @@
     use Psr\Http\Message\ServerRequestInterface;
     use Eroto\HomeHandler\Model\Member;
     use Eroto\HomeHandler\Model\Task;
+    use OTPHP\TOTP;
 
     use Doctrine\DBAL\Connection;
     
@@ -88,21 +89,23 @@
             return $renderer->render($response, 'form.php', ['type'=>'Member']);
         }
         
-        public function generatePlan(ServerRequestInterface $request,ResponseInterface $response, array $args){
+        public function generate(ServerRequestInterface $request,ResponseInterface $response, array $args){
             try{
-                $entityManager = $this->container->get(EntityManager::class);
                 $renderer = new PhpRenderer(APP_ROOT . '/templates');
-                $memberRepository = $entityManager->getRepository(Member::class);
-                $taskRepository = $entityManager->getRepository('');
-                $member = $memberRepository->findAll();
-                $task = $taskRepository->findAll();
 
+                // A random secret will be generated from this.
+                // You should store the secret with the user for verification.
+                $otp = TOTP::generate();
+                // Note: use your own way to load the user secret.
+                // The function "load_user_secret" is simply a placeholder.
+                $secret = "one";
+                $otp = TOTP::createFromSecret($secret);
             }
             catch(\Exception $e){
                 return $renderer->render($response, 'error.php', ['message' => 'Please retry. ' . $e->getMessage()]);
 
             }
-            return $renderer->render($response, 'workspace.php', ['member'=>$member, 'task'=>$task]);
+            return $renderer->render($response, 'workspace.php', ['password'=>$otp->now()]);
 
         }
 
