@@ -7,9 +7,7 @@
     use Psr\Http\Message\ResponseInterface;
     use Slim\Exception\HttpNotFoundException;
     use Psr\Http\Message\ServerRequestInterface;
-    use Eroto\HomeHandler\Model\Member;
-    use Eroto\HomeHandler\Model\Task;
-    use OTPHP\TOTP;
+    use Hackzilla\PasswordGenerator\Generator\ComputerPasswordGenerator;
 
     use Doctrine\DBAL\Connection;
     
@@ -93,19 +91,21 @@
             try{
                 $renderer = new PhpRenderer(APP_ROOT . '/templates');
 
-                // A random secret will be generated from this.
-                // You should store the secret with the user for verification.
-                $otp = TOTP::generate();
-                // Note: use your own way to load the user secret.
-                // The function "load_user_secret" is simply a placeholder.
-                $secret = "one";
-                $otp = TOTP::createFromSecret($secret);
+                $generator = new ComputerPasswordGenerator();
+
+                $generator
+                ->setOptionValue(ComputerPasswordGenerator::OPTION_UPPER_CASE, true)
+                ->setOptionValue(ComputerPasswordGenerator::OPTION_LOWER_CASE, true)
+                ->setOptionValue(ComputerPasswordGenerator::OPTION_NUMBERS, true)
+                ->setOptionValue(ComputerPasswordGenerator::OPTION_SYMBOLS, false);
+
+                $password = $generator->generatePassword();
             }
             catch(\Exception $e){
                 return $renderer->render($response, 'error.php', ['message' => 'Please retry. ' . $e->getMessage()]);
 
             }
-            return $renderer->render($response, 'workspace.php', ['password'=>$otp->now()]);
+            return $renderer->render($response, 'workspace.php', ['password'=>$password]);
 
         }
 

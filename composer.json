@@ -30,6 +30,7 @@
         "doctrine/orm": "^3.1",
         "symfony/cache": "^7.0",
         "spomky-labs/otphp":"^11.2",
+        "hackzilla/password-generator":"^1.6",
         "doctrine/migrations": "^3.7"
     }
 }
