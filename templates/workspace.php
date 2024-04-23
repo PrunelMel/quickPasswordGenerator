@@ -45,13 +45,16 @@
         </header>
 
         <div class="w-full h-1/2 m-auto font-bold text-white text-center">
-            
+        
             <?php if($password):?>
-                <div class = "h-full grid grid-cols-1 content-center"><?= $password ?></div><br>
+                <div class = "h-full grid grid-cols-1 content-center">
+                    <div class="w-1/3  m-auto border-2 border-solid rounded flex">
+                        <div class="flex-auto"><?= $password ?></div>
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M384 336H192c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16l140.1 0L400 115.9V320c0 8.8-7.2 16-16 16zM192 384H384c35.3 0 64-28.7 64-64V115.9c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1H192c-35.3 0-64 28.7-64 64V320c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H256c35.3 0 64-28.7 64-64V416H272v32c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192c0-8.8 7.2-16 16-16H96V128H64z"/></svg>                </div><br>
             <?php endif;?>
 
         </div>
-        <a href="/workspace/plan" class="block mb-2 transition-all w-32 h-12 text-center m-auto text-blue-700 bg-white hover:scale-105 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  focus:outline-none dark:focus:ring-blue-800">generate</a>
+        <a  href="/workspace/plan" class="block mb-2 transition-all w-32 h-12 text-center m-auto text-blue-700 bg-white hover:scale-105 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 font-bold focus:outline-none ">generate</a>
         <!-- <a href="/members" class="block m-auto tracking-widest text-center w-7 h-7 rounded  hover:bg-orange-600 text-white ">Create</a> -->
         
         <footer class="bg-white text-blue-700 ">
