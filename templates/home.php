@@ -28,7 +28,7 @@
                     <div class="justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                         <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                             <li>
-                                <a href="#" class="block py-2 pr-4 pl-3 text-blue-600 rounded  lg:p-0 hover:text-blue-900" aria-current="page">Home</a>
+                                <a href="/" class="block py-2 pr-4 pl-3 text-blue-600 rounded  lg:p-0 hover:text-blue-900" aria-current="page">Home</a>
                             </li>
                             <li>
                                 <a href="/workspace" class="block py-2 pr-4 pl-3 hover:text-blue-900 text-blue-600 border-b border-gray-100   lg:border-0  lg:p-0 ">Workspace</a>
