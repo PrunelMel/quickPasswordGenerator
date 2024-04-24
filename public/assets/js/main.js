@@ -23,5 +23,6 @@ let area = document.querySelector(".area-copy");
 button.addEventListener('click',()=>{
     navigator.clipboard.writeText(area.innerHTML);
     console.log('copied');
+    button.classList.add('hidden');
 
 });
