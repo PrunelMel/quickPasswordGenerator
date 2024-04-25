@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-y: hidden;">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/assets/css/style.css">
+        <script src= "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"> </script> 
         <script src="https://cdn.tailwindcss.com"></script>
         <script defer src="/assets/js/main.js"></script>
         <title>Workspace</title>
     </head>
     <body class="w-full bg-blue-700 h-screen">
+
+        <div class="loader w-full h-screen flex justify-center items-center" >
+            <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin   fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+                <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+                Loading...
+
+            </svg>
+            
+        </div>
+
+        
         <header>
             <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 text-blue-600">
                 <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
@@ -134,16 +147,32 @@
                         </svg>
                         <span class="sr-only">GitHub account</span>
                     </a>
-                    <a href="#" class="text-blue-700 white:text-blue-900  ms-5">
+                    <!-- <a href="#" class="text-blue-700 white:text-blue-900  ms-5">
                         <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z" clip-rule="evenodd"/>
                         </svg>
                         <span class="sr-only">Dribbble account</span>
-                    </a>
+                    </a> -->
                 </div>
             </div>
             </div>
         </footer>
+
+        <script> 
+            $(document).ready(function () { 
+                setTimeout(function () { 
+    
+                    // Fade in duration: 1 second 
+                    // $("header").fadeIn(1000);
+                    // $("footer").fadeIn(1000); 
+ 
+                    $(".loader").fadeOut(1000); 
+                    
+                    // Fade out duration: 1 second 
+                    // Display loading overlay for 1 second 
+                }, 500); 
+            }); 
+        </script> 
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 
