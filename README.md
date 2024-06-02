@@ -1,3 +1,6 @@
-<h1>A simple app for password generation</h1>.
+<h1>A simple app for password generation</h1>
 
-Simple to understand, easy to use.
+ <p>
+   It is really simple,easy to use.
+</p>
+
