@@ -70,7 +70,7 @@
             <?php endif;?>
 
         </div>
-        <a  href="/workspace/plan" class="block mb-2 transition-all w-32 h-12 text-center m-auto text-blue-700 bg-white hover:scale-105 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 font-bold focus:outline-none ">generate</a>
+        <a  href="/workspace/plan" class="gen block mb-2 transition-all w-32 h-12 text-center m-auto text-blue-700 bg-white hover:scale-105 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 font-bold focus:outline-none ">generate</a>
         <!-- <a href="/members" class="block m-auto tracking-widest text-center w-7 h-7 rounded  hover:bg-orange-600 text-white ">Create</a> -->
         
         <footer class="bg-white text-blue-700 ">
@@ -161,17 +161,18 @@
         <script> 
             $(document).ready(function () { 
                 setTimeout(function () { 
-    
                     // Fade in duration: 1 second 
                     // $("header").fadeIn(1000);
                     // $("footer").fadeIn(1000); 
- 
+
                     $(".loader").fadeOut(1000); 
                     
                     // Fade out duration: 1 second 
                     // Display loading overlay for 1 second 
                 }, 500); 
             }); 
+            
+            
         </script> 
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
