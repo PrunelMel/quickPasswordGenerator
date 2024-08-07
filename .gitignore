@@ -1,2 +1,2 @@
 /vendor/
-/var/
+ var/database.sqlite
