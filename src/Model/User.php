@@ -39,7 +39,7 @@ final class User{
         return $this->mail;
     }
 
-    public function setMail(string $name):static
+    public function setMail(string $mail):static
     {
         $this->mail = $mail;
 
