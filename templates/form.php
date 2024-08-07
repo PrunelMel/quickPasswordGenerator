@@ -8,7 +8,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="/assets/css/style.css">
         <script defer src="/assets/js/main.js"></script>
-        <title>Create a new member</title>
+        <title>Register</title>
     </head>
     <body class="h-full h-screen">
         <div class="container w-full grid grid-cols-1 content-end h-2/3 m-auto">
@@ -21,7 +21,7 @@
             <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
                 <div class="sm:mx-auto sm:w-full sm:max-w-sm">
                     
-                    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-blue-700">Add a new member</h2>
+                    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-blue-700">Create Account</h2>
                 </div>
 
                 <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -35,9 +35,9 @@
 
                         
                         <div class="flex items-center justify-between">
-                            <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                            <label for="password" class="block text-sm font-medium leading-6 text-blue-700">Password</label>
                             <div class="text-sm">
-                                <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
+                                <a href="#" class="font-semibold text-blue-700 hover:text-indigo-900">Forgot password?</a>
                             </div>
                         </div>
                         <div class="mt-2">
