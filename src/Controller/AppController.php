@@ -24,17 +24,17 @@
         public function get_member (ServerRequestInterface $request, ResponseInterface $response, array $args):ResponseInterface
         {
             $EntityManager = $this->container->get(EntityManager::class);
-            $member = $EntityManager->find(Member::class, $args['id']);
+            $user = $EntityManager->find(User::class, $args['id']);
 
             $renderer = new PhpRenderer(APP_ROOT . '/templates');
 
             if (!empty($member)){
-                $members = array('member'=>$member);
+                $user = array('member'=>$user);
             }else{
                 throw new HttpNotFoundException($request);
             }
 
-            return $renderer->render($response,'home.php',['members'=>$members]);
+            return $renderer->render($response,'home.php',['user'=>$user]);
         }
 
         public function create_member_temp(ServerRequestInterface $request,ResponseInterface $response, array $args): ResponseInterface
@@ -56,16 +56,18 @@
 
         }
 
-        public function create_member(ServerRequestInterface $request,ResponseInterface $response, array $args)
+        public function createUser(ServerRequestInterface $request,ResponseInterface $response, array $args)
         {
             try{
                 $EntityManager = $this->container->get(EntityManager::class);
                 $renderer = new PhpRenderer(APP_ROOT . '/templates');
                 $parsedData = $request->getParsedBody();
-                $name = $parsedData['email'];
-                $member = new User;
-                $member->setName($name);
-                $EntityManager->persist($member);
+                $mail = $parsedData['email'];
+                $password = $parsedData['password'];
+                $user = new User;
+                $user->setMail($mail);
+                $user->setPassword($password);
+                $EntityManager->persist($user );
                 $EntityManager->flush();
                 /*var_dump($member);
                 exit;*/
