@@ -8,7 +8,7 @@
     use Slim\Exception\HttpNotFoundException;
     use Psr\Http\Message\ServerRequestInterface;
     use Hackzilla\PasswordGenerator\Generator\ComputerPasswordGenerator;
-    use Eroto\HomeHandler\Model\Member;
+    use Eroto\HomeHandler\Model\User;
     use Doctrine\DBAL\Connection;
     
     
@@ -63,7 +63,7 @@
                 $renderer = new PhpRenderer(APP_ROOT . '/templates');
                 $parsedData = $request->getParsedBody();
                 $name = $parsedData['email'];
-                $member = new Member;
+                $member = new User;
                 $member->setName($name);
                 $EntityManager->persist($member);
                 $EntityManager->flush();
