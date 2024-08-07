@@ -8,7 +8,7 @@
     use Slim\Exception\HttpNotFoundException;
     use Psr\Http\Message\ServerRequestInterface;
     use Hackzilla\PasswordGenerator\Generator\ComputerPasswordGenerator;
-
+    use Eroto\HomeHandler\Model\Member;
     use Doctrine\DBAL\Connection;
     
     
