@@ -108,6 +108,13 @@
             return $renderer->render($response, 'workspace.php', ['password'=>$password]);
 
         }
+        /*public function authen(ServerRequestInterface $request, ResponseInterface $response):Response
+        {
+            $EntityManager = $this->container->get(EntityManager::class);
+            $renderer = new PhpRenderer(APP_ROOT . '/templates');
+            $parsedData = $request->getParsedBody();
+            $name = $parsedData['email'];
+        }*/
 
 
     }
