@@ -21,8 +21,6 @@
         ]
     },
     "require": {
-<<<<<<< HEAD
-=======
         "php": "^8.2",
         "slim/slim":"4.12.*",
         "ext-sqlite3": "*",
