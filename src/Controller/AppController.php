@@ -108,7 +108,20 @@
             return $renderer->render($response, 'workspace.php', ['password'=>$password]);
 
         }
+        public function authen(ServerRequestInterface $request,ResponseInterface $response, array $args):ResponseInterface{
+           try{
 
+               $EntityManager = $this->container->get(EntityManager::class);
+               $renderer = new PhpRenderer(APP_ROOT . '/templates');
+               $parsedData = $request->getParsedBody();
+               $name = $parsedData['email'];
+           }
+           catch(\Exception $e){
+            $hasError = true;
+            $messages = ['message' => 'Please retry. ' . $e->getMessage()];
+           }
+           return $renderer->render($response, "home.php", ['message'=> 'Member added']);
+        }
 
     }
 ?>
