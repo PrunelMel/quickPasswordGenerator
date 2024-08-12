@@ -115,12 +115,16 @@
                $renderer = new PhpRenderer(APP_ROOT . '/templates');
                $parsedData = $request->getParsedBody();
                $name = $parsedData['email'];
+               $password = $parsedData['password'];
+               
+               // Find user by email
+                $user = $EntityManager->getRepository(User::class)->findOneBy(['email' => $email]);
            }
            catch(\Exception $e){
             $hasError = true;
             $messages = ['message' => 'Please retry. ' . $e->getMessage()];
            }
-           return $renderer->render($response, "home.php", ['message'=> 'Member added']);
+           return $renderer->render($response, "home.php", ['message'=> 'Login successfuly']);
         }
 
     }
