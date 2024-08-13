@@ -8,7 +8,9 @@
     use Slim\Exception\HttpNotFoundException;
     use Psr\Http\Message\ServerRequestInterface;
     use Hackzilla\PasswordGenerator\Generator\ComputerPasswordGenerator;
-
+    use Symfony\Component\Mailer\Transport;
+    use Symfony\Component\Mailer\Mailer;
+    use Symfony\Component\Mime\Email;
     use Doctrine\DBAL\Connection;
     
     
@@ -107,6 +109,25 @@
             }
             return $renderer->render($response, 'workspace.php', ['password'=>$password]);
 
+        }
+
+        public function mailer(ServerRequestInterface $request,ResponseInterface $response, array $args){
+            
+            $transport = Transport::fromDsn('smtp://localhost');
+            $mailer = new Mailer($transport);
+
+            $email = (new Email())
+                ->from('hello@example.com')
+                ->to('you@example.com')
+                //->cc('cc@example.com')
+                //->bcc('bcc@example.com')
+                //->replyTo('fabien@example.com')
+                //->priority(Email::PRIORITY_HIGH)
+                ->subject('Time for Symfony Mailer!')
+                ->text('Sending emails is fun again!')
+                ->html('<p>See Twig integration for better HTML integration!</p>');
+
+            $mailer->send($email);
         }
 
 
