@@ -8,9 +8,6 @@
     use Slim\Exception\HttpNotFoundException;
     use Psr\Http\Message\ServerRequestInterface;
     use Hackzilla\PasswordGenerator\Generator\ComputerPasswordGenerator;
-    use Symfony\Component\Mailer\Transport;
-    use Symfony\Component\Mailer\Mailer;
-    use Symfony\Component\Mime\Email;
     use Doctrine\DBAL\Connection;
     
     
