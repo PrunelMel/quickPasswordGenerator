@@ -54,7 +54,7 @@
         public function home(ServerRequestInterface $request, ResponseInterface $response, array $args):ResponseInterface
         {
             $renderer = new PhpRenderer(APP_ROOT . '/templates');
-            return $renderer->render($response, 'home.php', ['type'=>'Member']);
+            return $renderer->render($response, 'LandingPage.php', ['type'=>'Member']);
 
         }
 
