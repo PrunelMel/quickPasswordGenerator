@@ -39,7 +39,7 @@
             <div class="md:w-1/2">
                 <h1 class="text-4xl font-bold mb-4 text-violet-400">Générez des Mots de Passe Sécurisés en un Clic</h1>
                 <p class="text-gray-300 mb-6">Notre générateur de mot de passe vous aide à créer des mots de passe forts et uniques pour protéger vos comptes en ligne.</p>
-                <a href="#" class="bg-violet-500 hover:bg-violet-700 text-white font-bold py-3 px-6 rounded-full">Commencer Maintenant</a>
+                <a href="/dashboard" class="bg-violet-500 hover:bg-violet-700 text-white font-bold py-3 px-6 rounded-full">Commencer Maintenant</a>
             </div>
         </div>
     </section>
