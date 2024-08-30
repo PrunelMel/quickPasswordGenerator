@@ -98,7 +98,8 @@
                 <!-- Bouton de génération -->
                 <div class="text-center">
                     <button class="bg-violet-500 hover:bg-violet-700 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-violet-600">
-                        Générer le Mot de Passe
+                        <a href="/generate">Générer le Mot de Passe</a>
+                        
                     </button>
                 </div>
             </form>

@@ -8,7 +8,7 @@
         <script defer src="/assets/js/main.js"></script>
         <title>Home page</title>
     </head>
-    <body class="bg-blue-700 h-screen">
+    <body class="bg-blue-700 h-screen" style="height: 100vh;">
         <div class="container flex flex-row content-center gap-x-4 w-full h-full bg-blue-700">
                 <div class="text-container text-white w-1/2 grid grid-cols-1 content-center" >
                 <p class="hidde text-center text-lg w-full">
