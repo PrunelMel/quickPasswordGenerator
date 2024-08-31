@@ -40,11 +40,11 @@
             return $renderer->render($response,'home.php',['user'=>$user]);
         }
 
-        public function create_member_temp(ServerRequestInterface $request,ResponseInterface $response, array $args): ResponseInterface
+        public function createMemberTemp(ServerRequestInterface $request,ResponseInterface $response, array $args): ResponseInterface
         {
             //Create member
             $renderer = new PhpRenderer(APP_ROOT . '/templates');
-            return $renderer->render($response, 'form.php', ['type'=>'Member']);
+            return $renderer->render($response, 'newForm.php');
         }
 
         public function dashboard(ServerRequestInterface $request,ResponseInterface $response, array $args){
