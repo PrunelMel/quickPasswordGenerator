@@ -16,7 +16,7 @@
     <div class="w-full max-w-md bg-gray-800 p-8 rounded-lg shadow-lg">
         <h2 class="text-3xl font-bold text-violet-400 text-center mb-6">Créer un Compte</h2>
         
-        <form>
+        <form method ="POST" action="/addUser">
             <!-- Nom d'utilisateur -->
             <div class="mb-4">
                 <label class="block text-gray-400 font-semibold mb-2" for="username">Nom d'utilisateur</label>
@@ -37,8 +37,6 @@
 
             <!-- Confirmation du Mot de Passe -->
             <div class="mb-6">
-                <div class="text-red-500 invisible" id="confirmation-error">Les mots de passe ne correspondent pas</div>
-
                 <label class="block text-gray-400 font-semibold mb-2" for="confirm_password">Confirmer le Mot de Passe</label>
                 <input class="w-full p-3 bg-gray-700 text-gray-300 rounded-lg border border-gray-600 focus:border-violet-500 focus:ring-violet-500 focus:outline-none" type="password" id="confirm_password" name="confirm_password" placeholder="Confirmez votre mot de passe" required>
             </div>

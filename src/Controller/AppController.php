@@ -59,7 +59,7 @@
 
         }
 
-        public function createUser(ServerRequestInterface $request,ResponseInterface $response, array $args)
+        /*public function createUser(ServerRequestInterface $request,ResponseInterface $response, array $args)
         {
             try{
                 $EntityManager = $this->container->get(EntityManager::class);
@@ -72,8 +72,8 @@
                 $user->setPassword($password);
                 $EntityManager->persist($user );
                 $EntityManager->flush();
-                /*var_dump($member);
-                exit;*/
+                //var_dump($member);
+                //exit;
             }
             catch(\Exception $e){
                 $hasError = true;
@@ -81,8 +81,38 @@
             }
 
             return $renderer->render($response, "home.php", ['message'=> 'Member added']);
-        }
+        }*/
+        
+        public function createUser(ServerRequestInterface $request,ResponseInterface $response, array $args)
+        {
+            try{
 
+                $renderer = new PhpRenderer(APP_ROOT . '/templates');
+
+                $parsedData = $request->getParsedBody();
+
+                $name = $parsedData['username'];
+
+                $email = $parsedData['email'];
+
+                $password = $parsedData['password'];
+
+                //api call
+                $request = curl_init('http://127.0.0.1:8000/users?name=' . $name . '&password=' . $password . '&email=' . $email);
+
+                curl_setopt($request, CURLOPT_CUSTOMREQUEST, "POST");
+
+                curl_setopt($request,  CURLOPT_RETURNTRANSFER, true);
+
+                $res = curl_exec($request);
+
+                curl_close($request);
+            }
+            catch(\Exception $e){
+                return $renderer->render($response, 'error.php', ['message' => 'Please retry.' . $e->getMessage().$response]);
+            }
+            return $renderer->render($response, 'dashboard.php', ['message' => 'Member added']);
+        }
         
         public function generate(ServerRequestInterface $request,ResponseInterface $response, array $args){
             try{
