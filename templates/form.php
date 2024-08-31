@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                    <form class="space-y-6" action="/members" method="POST">
+                    <form class="space-y-6" action="/addUser" method="POST">
                         <div>
                             <label for="email" class="block text-sm font-medium leading-6 text-blue-700">Email</label>
                             <div class="mt-2" >

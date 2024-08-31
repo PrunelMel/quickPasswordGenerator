@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Créer un Compte - PasswordGen</title>
+    <script defer src="/assets/js/newForm.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -35,6 +37,8 @@
 
             <!-- Confirmation du Mot de Passe -->
             <div class="mb-6">
+                <div class="text-red-500 invisible" id="confirmation-error">Les mots de passe ne correspondent pas</div>
+
                 <label class="block text-gray-400 font-semibold mb-2" for="confirm_password">Confirmer le Mot de Passe</label>
                 <input class="w-full p-3 bg-gray-700 text-gray-300 rounded-lg border border-gray-600 focus:border-violet-500 focus:ring-violet-500 focus:outline-none" type="password" id="confirm_password" name="confirm_password" placeholder="Confirmez votre mot de passe" required>
             </div>
@@ -52,7 +56,6 @@
             <a href="#" class="text-violet-400 hover:text-violet-600">Déjà un compte? Connectez-vous ici.</a>
         </div>
     </div>
-
 </body>
 
 </html>

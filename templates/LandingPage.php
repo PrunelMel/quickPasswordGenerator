@@ -24,7 +24,7 @@
             <div class="text-2xl font-bold text-violet-400">PasswordGen</div>
             <nav>
                 <ul class="flex space-x-6">
-                    <li><a href="#" class="text-gray-400 hover:text-violet-500">Home</a></li>
+                    <li><a href="/addUser" class="text-gray-400 hover:text-violet-500">SignUp</a></li>
                     <li><a href="#" class="text-gray-400 hover:text-violet-500">Features</a></li>
                     <li><a href="#" class="text-gray-400 hover:text-violet-500">Pricing</a></li>
                     <li><a href="#" class="text-gray-400 hover:text-violet-500">Contact</a></li>
