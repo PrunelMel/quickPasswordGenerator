@@ -48,14 +48,14 @@
         }
 
         public function dashboard(ServerRequestInterface $request,ResponseInterface $response, array $args){
-            
+            session_start();
             $renderer = new PhpRenderer(APP_ROOT . '/templates');
 
             if (isset($_SESSION['id'])) {
                 return $renderer->render($response, 'dashboard.php');
             }
 
-            return $renderer->render($response, 'login.php');
+            return $response->withStatus(302)->withHeader('Location', '/login');
         }
 
         public function home(ServerRequestInterface $request, ResponseInterface $response, array $args):ResponseInterface
@@ -96,9 +96,9 @@
                 
                 if($data['status'] == 200 && $data['user']['password'] == $password){
                     
-                    $_SESSION['id'] = $data['id'];
+                    $_SESSION['id'] = $data['user']['id'];
 
-                    return $renderer->render($response, 'dashboard.php', ['message' => 'Member logged in']);
+                    return $response->withStatus(302)->withHeader('Location', '/dashboard');
 
                 }
                 else{

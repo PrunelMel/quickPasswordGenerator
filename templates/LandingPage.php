@@ -32,10 +32,7 @@
             </nav>
         </div>
     </header>
-    <?php
-        if (isset($session)) {
-            echo $session;
-        }    ?>
+        
     <!-- Hero Section -->
     <section class="hero-bg py-20 text-white">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
