@@ -24,7 +24,7 @@
             <div class="text-2xl font-bold text-violet-400">PasswordGen</div>
             <nav>
                 <ul class="flex space-x-6">
-                    <li><a href="/addUser" class="text-gray-400 hover:text-violet-500">SignUp</a></li>
+                    <li><a href="/login" class="text-gray-400 hover:text-violet-500">SignUp</a></li>
                     <li><a href="#" class="text-gray-400 hover:text-violet-500">Features</a></li>
                     <li><a href="#" class="text-gray-400 hover:text-violet-500">Pricing</a></li>
                     <li><a href="#" class="text-gray-400 hover:text-violet-500">Contact</a></li>
@@ -32,7 +32,10 @@
             </nav>
         </div>
     </header>
-
+    <?php
+        if (isset($session)) {
+            echo $session;
+        }    ?>
     <!-- Hero Section -->
     <section class="hero-bg py-20 text-white">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
