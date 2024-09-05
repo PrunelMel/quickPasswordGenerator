@@ -48,14 +48,68 @@
         }
 
         public function dashboard(ServerRequestInterface $request,ResponseInterface $response, array $args){
+            
             $renderer = new PhpRenderer(APP_ROOT . '/templates');
-            return $renderer->render($response, 'dashboard.php');
+
+            if (isset($_SESSION['id'])) {
+                return $renderer->render($response, 'dashboard.php');
+            }
+
+            return $renderer->render($response, 'login.php');
         }
 
         public function home(ServerRequestInterface $request, ResponseInterface $response, array $args):ResponseInterface
         {
+            session_start();
             $renderer = new PhpRenderer(APP_ROOT . '/templates');
-            return $renderer->render($response, 'LandingPage.php');
+            return $renderer->render($response, 'LandingPage.php',['session'=>\serialize($_SESSION)]);
+
+        }
+
+        public function loginTemp(ServerRequestInterface $request,ResponseInterface $response, array $args){
+            $renderer = new PhpRenderer(APP_ROOT . '/templates');
+            return $renderer->render($response, 'login.php');
+        }
+
+        public function login(ServerRequestInterface $request,ResponseInterface $response, array $args){
+            
+            try{
+
+                session_start();
+
+                $parsedData = $request->getParsedBody();
+
+                $mail = $parsedData['email'];
+
+                $password = $parsedData['password'];
+
+                $renderer = new PhpRenderer(APP_ROOT . '/templates');
+
+                //api call
+                $req = curl_init('http://127.0.0.1:8000/users/' . $mail.'/' . $password);
+                curl_setopt($req, CURLOPT_CUSTOMREQUEST, "GET");
+                curl_setopt($req, CURLOPT_RETURNTRANSFER, true);
+                $res = curl_exec($req);
+                curl_close($req);
+
+                $data = json_decode($res, true);
+                
+                if($data['status'] == 200 && $data['user']['password'] == $password){
+                    
+                    $_SESSION['id'] = $data['id'];
+
+                    return $renderer->render($response, 'dashboard.php', ['message' => 'Member logged in']);
+
+                }
+                else{
+
+                    return $renderer->render($response, 'login.php', ['message' => 'Please retry. Password or Email is incorrect'. var_dump($data)]);
+                }
+            }
+            catch(\Exception $e){
+                return $renderer->render($response, 'error.php', ['message' => 'Please retry. ' . $e->getMessage()]);                
+            }
+            
 
         }
 
@@ -155,7 +209,7 @@
             }
 
 
-            return $renderer->render($response, 'dashboard.php', ['password'=>$password]);
+            return $renderer->render($response, 'dashboard.php');
 
         }
         

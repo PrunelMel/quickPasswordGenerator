@@ -73,9 +73,9 @@ final class Slim implements ServiceProvider{
         
             $app->get('/generate',[AppController::class,'generate'] );
 
-            $app->get('/tasks', function (Request $request, Response $response, $args) {
-                //show all tasks
-            });
+            $app->get('/login', [AppController::class,'loginTemp']);
+
+            $app->post('/login', [AppController::class,'login']);
         
             $app->get('/tasks/{id}', function (Request $request, Response $response, $args) {
                 //show task by identified $args['id']
