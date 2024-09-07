@@ -5,14 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Générateur de Mot de Passe - Sombre & Violet</title>
-    <style>
-        /* Background image styling */
-        .hero-bg {
-            background-image: url('https://your-image-url.com'); /* Remplacez par l'URL de votre image de fond */
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
+
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -34,8 +27,8 @@
     </header>
         
     <!-- Hero Section -->
-    <section class="hero-bg py-20 text-white">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+    <section class="py-20 text-white">
+        <div class="container  flex items-center justify-center">
             <div class="md:w-1/2">
                 <h1 class="text-4xl font-bold mb-4 text-violet-400">Générez des Mots de Passe Sécurisés en un Clic</h1>
                 <p class="text-gray-300 mb-6">Notre générateur de mot de passe vous aide à créer des mots de passe forts et uniques pour protéger vos comptes en ligne.</p>
@@ -51,21 +44,21 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="p-6 border rounded-lg border-gray-700">
                     <div class="mb-6">
-                        <img src="https://your-image-url.com/icon1.png" alt="Icone de sécurité" class="mx-auto h-16">
+                        <img src="" alt="Icone de sécurité" class="mx-auto h-16">
                     </div>
                     <h3 class="text-xl font-semibold text-violet-400">Sécurisé</h3>
                     <p class="text-gray-300 mt-4">Générez des mots de passe hautement sécurisés pour une protection maximale.</p>
                 </div>
                 <div class="p-6 border rounded-lg border-gray-700">
                     <div class="mb-6">
-                        <img src="https://your-image-url.com/icon2.png" alt="Icone de simplicité" class="mx-auto h-16">
+                        <img src="" alt="Icone de simplicité" class="mx-auto h-16">
                     </div>
                     <h3 class="text-xl font-semibold text-violet-400">Facile à Utiliser</h3>
                     <p class="text-gray-300 mt-4">Interface intuitive pour une génération de mot de passe simple et rapide.</p>
                 </div>
                 <div class="p-6 border rounded-lg border-gray-700">
                     <div class="mb-6">
-                        <img src="https://your-image-url.com/icon3.png" alt="Icone de gratuité" class="mx-auto h-16">
+                        <img src="" alt="Icone de gratuité" class="mx-auto h-16">
                     </div>
                     <h3 class="text-xl font-semibold text-violet-400">Gratuit</h3>
                     <p class="text-gray-300 mt-4">Générez des mots de passe gratuitement sans aucune restriction.</p>

@@ -51,7 +51,7 @@
 
         <!-- Lien vers la page de connexion -->
         <div class="text-center mt-4">
-            <a href="#" class="text-violet-400 hover:text-violet-600">Déjà un compte? Connectez-vous ici.</a>
+            <a href="/login" class="text-violet-400 hover:text-violet-600">Déjà un compte? Connectez-vous ici.</a>
         </div>
     </div>
 </body>
