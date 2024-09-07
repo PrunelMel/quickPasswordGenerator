@@ -48,7 +48,7 @@
 
         <!-- Lien pour Créer un Compte -->
         <div class="text-center mt-4">
-            <a href="#" class="text-violet-400 hover:text-violet-600">Pas encore de compte? Créez-en un ici.</a>
+            <a href="/addUser" class="text-violet-400 hover:text-violet-600">Pas encore de compte? Créez-en un ici.</a>
         </div>
     </div>
 
